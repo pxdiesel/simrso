@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SIM RSO | Dashboard</title>
+  <title>{{ config('app.name', 'Laravel') }}SIM RSO | Dashboard</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -46,10 +46,10 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/home" class="nav-link">Home</a>
+        <a href="/" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+        <a href="/contact" class="nav-link">Contact</a>
       </li>
     </ul>
 
@@ -110,7 +110,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="../index" class="brand-link">
+    <a href="/" class="brand-link">
       <img src="img/logo-192.png" alt="sim-rso" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-white">SIM RSO</span>
     </a>
@@ -120,10 +120,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{ asset('templates') }}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="img/logo-192.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="../profile" class="d-block">{{ "user" }}</a>
+          <a href="../profile" class="d-block">{{ Auth::user()->name }}</a>
         </div>
       </div>
 

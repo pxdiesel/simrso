@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Log in</title>
+  <title>SIM RSO | Log in</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -18,12 +18,18 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="/dashboard"><b>Login</b>User</a>
+    <a href="/"><b>Login</b>User</a> <br>
+
   </div>
   <!-- /.login-logo -->
   <div class="card">
+
+    <div class="card-header text-center">
+      <img src="img/logo-192.png" alt="sim rso" class="text-center"> 
+    </div>
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Masuk untuk memulai sesi Anda</p>
+      
+      
 
       <form method="POST" action="{{ route('login') }}">
         @csrf

@@ -2,11 +2,11 @@
 
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ChartController;
-use App\Http\Controllers\TableController;
+use App\Http\Controllers\DatarsoController;
 use App\Http\Controllers\ProfileController;
 
 
@@ -29,10 +29,15 @@ use App\Http\Controllers\ProfileController;
 
     Auth::routes();
 
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/contact', function () {
+        return view('contact');
+    });
+   
     Route::get('/chart', [App\Http\Controllers\ChartController::class, 'index'])->name('chart');
-    Route::get('/table', [App\Http\Controllers\TableController::class, 'index'])->name('table');
+    Route::get('/datarso', [App\Http\Controllers\DatarsoController::class, 'index'])->name('datarso');
+    Route::get('/datarso/edit/{id}','DatarsoController@edit');
+    Route::post('/datarso/update','DatarsoController@update');
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
     Route::group(['middleware' => 'auth'], function () {
