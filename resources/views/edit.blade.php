@@ -22,23 +22,39 @@
     <div class="container-fluid">
       <div class="row">
         <!-- left column -->
-        <div class="col-md-6">
+        <div class="col-md-12">
           <!-- general form elements -->
           <div class="card card-primary">
             <div class="card-header">
               <h3 class="card-title">Quick Example</h3>
             </div>
 
-            @foreach($pegawai as $d)
-            <form action="/pegawai/update" method="post">
+            @foreach($datarso as $d)
+            <form action="/datarso/update" method="post">
                 {{ csrf_field() }}
+                <div class="card-body">
+                                
                 <input type="hidden" name="id" value="{{ $d->id }}"> <br/>
-                Nama of RSO <input type="text" required="required" name="nama" value="{{ $d->nama_of_rso }}"> <br/>
-                No of Decree<input type="text" required="required" name="no_of_decree" value="{{ $d->no_of_decree }}"> <br/>
-                Issued <input type="text" required="required" name="issued" value="{{ $d->Issued }}"> <br/>
-                Valid <input type="text" required="required" name="valid" value=" {{ $d->valid}}"> <br/>
-               Comment<input type="text" required="required" name="comment" value=" {{ $d->comment}}"> <br/>
-                <input type="submit" value="Simpan Data">
+                  
+                  <div class="form-group">
+                <label for="nama of rso">Nama of RSO </label> <input type="text" class="form-control" required="required" name="nama_of_rso" value="{{ $d->nama_of_rso }}"> <br/>
+                  </div>
+                <div class="form-group">
+                <label for="no of decree">No of Decree</label> <input type="text" class="form-control" required="required" name="no_of_degree" value="{{ $d->no_of_degree }}"> <br/>
+                </div>
+                <div class="form-group">
+                <label for="issued">Issued</label>  <input type="text" class="form-control" required="required" name="Issued" value="{{ $d->Issued }}"> <br/>
+                </div>
+                <div class="form-group">
+                <label for="valid">Valid</label>  <input type="text" class="form-control" required="required" name="valid" value=" {{ $d->valid}}"> <br/>
+                </div>
+                <div class="form-group">
+                <label for="comment">Comment</label> <input type="text" class="form-control" required="required" name="comment" value=" {{ $d->comment}}"> <br/>
+                </div>
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Simpan Data</button>
+                </div>
+                </div>
             </form>
             @endforeach
 
@@ -47,10 +63,10 @@
 
             <form action="/datarso/update" method="post">
                
-              <div class="card-body">
+              
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  <label>Email address</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>

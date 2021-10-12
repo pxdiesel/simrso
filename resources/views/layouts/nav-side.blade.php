@@ -16,7 +16,7 @@
                 <a href="../chart" class="nav-link">
                   <i class="nav-icon fas fa-chart-bar"></i>
                   <p>
-                    Chart
+                    Grafik Data RSO
                   </p>
                 </a>
               </li>

@@ -40,7 +40,7 @@
                         <td>
                           <a href="/datarso/edit/{{ $d->id }}">Edit</a>
                         |
-                          <a href="/datarso/delete/{{ $d->id }}">Delete</a>
+                          <a href="/datarso/hapus/{{ $d->id }}">Delete</a>
                         </td>
                         
 

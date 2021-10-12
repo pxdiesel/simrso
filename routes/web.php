@@ -36,10 +36,10 @@ use App\Http\Controllers\ProfileController;
    
     Route::get('/chart', [App\Http\Controllers\ChartController::class, 'index'])->name('chart');
     Route::get('/datarso', [App\Http\Controllers\DatarsoController::class, 'index'])->name('datarso');
-    Route::get('/datarso/edit/{id}','DatarsoController@edit');
-    Route::post('/datarso/update','DatarsoController@update');
+    Route::get('/datarso/edit/{id}',[App\Http\Controllers\DatarsoController::class, 'edit'])->name('edit');
+    Route::post('/datarso/update',[App\Http\Controllers\DatarsoController::class, 'update'])->name('update');
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-
+    Route::get('/datarso/hapus/{id}',[App\Http\Controllers\DatarsoController::class, 'delete'])->name('hapus');
     Route::group(['middleware' => 'auth'], function () {
 
         Route::get('/profile', [App\Http\Controllers\ProfileController::class,

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 
+
 class DatarsoController extends Controller
 {
      //
@@ -23,7 +24,7 @@ class DatarsoController extends Controller
     
     public function index()
     {
-    	// mengambil data dari table pegawai
+    	// mengambil data dari table 
     	$datarso = DB::table('datarso')->get();
 
     	// mengirim data pegawai ke view index
@@ -44,13 +45,22 @@ public function update(Request $request)
 {
 	// update data Rso
 	DB::table('datarso')->where('id',$request->id)->update([
-		'nama_of_rso' => $request->nameRso,
-		'no_of_decree' => $request->no_decree,
-		'Issued' => $request->issued,
+		'nama_of_rso' => $request->nama_of_rso,
+		'no_of_degree' => $request->no_of_degree,
+		'Issued' => $request->Issued,
         'valid' => $request->valid,
         'comment' => $request->comment
 	]);
 	// alihkan halaman ke halaman Rso
+	return redirect('/datarso');
+}
+// method untuk hapus data rso
+public function hapus($id)
+{
+	// menghapus data rso berdasarkan id yang dipilih
+	DB::table('datarso')->where('id',$id)->delete();
+		
+	// alihkan halaman ke halaman 
 	return redirect('/datarso');
 }
 }
